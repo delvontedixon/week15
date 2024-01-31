@@ -1,3 +1,21 @@
+class Teams {
+  constructor(name) {
+    this.name = name;
+    this.rooms = [];
+  }
+
+  addPlayer(name, area) {
+    this.player.push(new Player(name, area));
+  }
+}
+
+class Player {
+  constructor(name, area) {
+    this.name = name;
+    this.area = area;
+  }
+}
+
 function Teams() {
   const COMMENTS_ENDPOINT = "";
   // NOTE GET request from the API or local json file
