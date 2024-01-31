@@ -1,101 +1,15 @@
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import Button from "react-bootstrap/Button";
+import Teams from "./components/teams";
 
 function App() {
-  const COMMENTS_ENDPOINT = "";
-  // NOTE GET request from the API or local json file
-  const getComments = async () => {
-    console.log("getting comment data from mockapi...");
-
-    try {
-      const response = await fetch(COMMENTS_ENDPOINT); // url you want get data from
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const resp = await response.json(); // parsing the response as JSON
-      return resp;
-    } catch (error) {
-      console.log(
-        "Oh no! There was an error with getting your comment.",
-        error
-      );
-    }
-  };
-
-  // NOTE POST requests from the API or local json file
-  const postComment = async (commentData) => {
-    console.log("posting comment", commentData);
-    try {
-      const response = await fetch(COMMENTS_ENDPOINT, {
-        // url you want to post to
-        method: "POST", // type of request
-        headers: {
-          "Content-Type": "application/json", // type of data sent to the server
-        },
-        body: JSON.stringify({ commentName: commentData }), // data you want to update
-      });
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const resp = await response.json(); // parsing the response as JSON
-      return resp;
-    } catch (error) {
-      console.log(
-        "Oh no! There was an error with posting your comment.",
-        error
-      );
-    }
-  };
-
-  // NOTE PUT request from the API or local json file
-  const updateComment = async (commentData, commentId) => {
-    console.log("updating comment", commentData);
-    try {
-      const response = await fetch(COMMENTS_ENDPOINT + `/${commentId}`, {
-        // url + id you want to update
-        method: "PUT", // type of request
-        headers: {
-          "Content-Type": "application/json", // type of data sent to the server
-        },
-        body: JSON.stringify({ commentName: commentData }), // data you want to update
-      });
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const resp = await response.json(); // parsing the response as JSON
-      return resp;
-    } catch (error) {
-      console.log(
-        "Oh no! There was an error with updating your comment.",
-        error
-      );
-    }
-  };
-
-  // NOTE DELETE request from the API or local json file
-  const deleteComment = async (commentId) => {
-    console.log("deleting comment", commentId);
-    try {
-      const response = await fetch(COMMENTS_ENDPOINT + `/${commentId}`, {
-        // url + id you want to delete
-        method: "DELETE", // type of request
-      });
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      return response; // The DELETE request might not return a JSON response
-    } catch (error) {
-      console.log(
-        "Oh no! There was an error with deleting your comment.",
-        error
-      );
-    }
-  };
   return (
     <div className="App">
       <h1>Testing App</h1>
       <Button>Button example</Button>
+      <br />
+      <Teams />
     </div>
   );
 }
@@ -104,3 +18,7 @@ export default App;
 
 // Conts url instead of static url
 // https://65b923cbb71048505a8a4706.mockapi.io/teams
+// Coding Steps:
+// Using the Houses API, or any open API of your choice you can find online, create a single page that allows for all 4 CRUD operations to be performed on a resource from the API.
+// Create a React component (or more, if needed) to represent the resource.
+// Make all forms and other necessary UI pieces their own components as reasonable.
