@@ -1,4 +1,4 @@
-class Teams {
+class NewTeam {
   constructor(name) {
     this.name = name;
     this.rooms = [];
