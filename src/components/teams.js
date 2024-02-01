@@ -17,7 +17,7 @@ class Player {
 }
 
 function Teams() {
-  const COMMENTS_ENDPOINT = "";
+  const COMMENTS_ENDPOINT = "https://65b923cbb71048505a8a4706.mockapi.io/teams";
   // NOTE GET request from the API or local json file
   const getComments = async () => {
     console.log("getting comment data from mockapi...");
