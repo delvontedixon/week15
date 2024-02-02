@@ -1,10 +1,10 @@
-import React from 'react';
+import React from "react";
 import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import Teams from "./components/teams";
 import { Link } from "react-router-dom";
 
-import default function Navigate(){
+/*import default function Navigate(){
   return (
       <nav class="flex items-center justify-between flex-wrap bg-green-500 p-6">
       <div class="flex items-center flex-shrink-0 text-white mr-6">
@@ -18,7 +18,7 @@ import default function Navigate(){
       </nav>
   )
 }
-
+*/
 function App() {
   return (
     <div className="App">
