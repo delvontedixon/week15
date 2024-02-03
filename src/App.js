@@ -3,6 +3,9 @@ import "../node_modules/bootstrap/dist/css/bootstrap.css";
 import "./App.css";
 import Teams from "./components/teams";
 import Navigate from "./components/Navigate";
+import UpdateUser from "./components/UpdateUser";
+import UsersList from "./components/UsersList";
+import CreateUser from "./components/CreateUser";
 
 function App() {
   return (
@@ -10,6 +13,9 @@ function App() {
       <h1>Testing App</h1>
       <br />
       <Navigate />
+      <UpdateUser />
+      <UsersList />
+      <CreateUser />
       <Teams />
     </div>
   );
